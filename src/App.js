@@ -2,7 +2,7 @@ import { MainDisplay } from "./components/MainDisplay";
 
 function App() {
   return (
-    <div className="">
+    <div className="text-white">
       <MainDisplay />
     </div>
   );
