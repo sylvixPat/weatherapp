@@ -26,7 +26,6 @@ const Weather = () => {
 
   return (
     <div>
-      <h1>Weather App</h1>
       <input
         type="text"
         value={city}
