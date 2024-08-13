@@ -54,6 +54,11 @@ const Weather = () => {
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                   {weather.weather[0].description}
                 </p>
+                <img 
+                  src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} 
+                  alt={weather.weather[0].description}
+                  className="w-16 h-16"
+                />
               </div>
               <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                 <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
@@ -69,6 +74,7 @@ const Weather = () => {
                     <dt className="text-base leading-7 text-gray-300">Humidity:</dt>
                     <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{weather.main.humidity}%</dd>
                   </div>
+                  
                 </dl>
               </div>
             </div>
@@ -95,7 +101,13 @@ const Weather = () => {
                   {forecast.list.slice(0, 5).map((item, index) => (
                     <div key={index} className="flex flex-col-reverse">
                       <dt className="text-base leading-7 text-gray-300">{new Date(item.dt_txt).toLocaleString()} - {item.weather[0].description}</dt>
-                      <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{item.main.temp}°C / {celsiusToFahrenheit(item.main.temp).toFixed(2)}°F</dd>
+                      <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{item.main.temp}°C / {celsiusToFahrenheit(item.main.temp).toFixed(2)}°F
+                        <img 
+                          src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`} 
+                          alt={item.weather[0].description}
+                          className="w-12 h-12"
+                        />
+                      </dd>
                     </div>
                   ))}
                 </dl>
